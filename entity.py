@@ -13,13 +13,14 @@ import en_core_web_sm
 
 
 def cleaner(message): 
-    corpus = []
-    for text in message:
-        review = re.sub('[^a-zA-Z]', ' ', text)
-        review = review.lower()
-        review = review.split()
-        review = ' '.join(review)
-        corpus.append(review)
+    corpus = [text for text in message re.sub('[^a-z]', ' ', text.lower())]
+    ##yasir version
+    #for text in message:
+        #review = re.sub('[^a-zA-Z]', ' ', text)
+        #review = review.lower()
+        #review = review.split()
+        #review = ' '.join(review)
+        #corpus.append(review)
     return corpus
 
 data = pd.read_excel('DataSetLeave_FinalMerge.xlsx',index_col = 0)
